@@ -383,7 +383,7 @@ public class RoleServiceImpl implements RoleService {
 }
 
 ```
-###编写控制器类RoleController
+### 编写控制器类RoleController
 ```
 package com.school.controller;
 
@@ -415,3 +415,9 @@ public class RoleController {
 }
 
 ```
+页面访问地址
+http://localhost:8080/schoolmanage/role/list.do
+数据访问地址
+http://localhost:8080/schoolmanage/role/listPages.do
+
+
