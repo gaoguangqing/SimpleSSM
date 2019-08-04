@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mybatis中的映射文件 -->
+<!--定义一个sql查询，sql查询必须有一个id,其中resultType表示查询结果会封装到对应的map类型中,一行记录对应一个map -->
+<mapper namespace="com.school.dao.RoleDao">
+    <!-- 借助sql元素可以对重复编写的sql语句进行提取 -->
+    <sql id="tableName"> roles </sql>
+    <sql id="fromTable">
+        from
+        <include refid="tableName" />
+    </sql>
+
+    <select id="findPageObjects" resultType="com.school.entity.Role">
+        select *
+        <include refid="fromTable" />
+    </select>
+
+</mapper>
