@@ -1,6 +1,6 @@
 # SimpleSSM
 一个简单的SSM项目
-在sqlyog执行数据库脚本
+#### 在sqlyog执行数据库脚本
 ```
 CREATE DATABASE IF NOT EXISTS shop CHARSET utf8;
 USE shop;
