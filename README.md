@@ -1,5 +1,22 @@
 # SimpleSSM
 一个简单的SSM项目
+在sqlyog执行数据库脚本
+```
+CREATE DATABASE IF NOT EXISTS shop CHARSET utf8;
+USE shop;
+DROP TABLE IF EXISTS `roles`;
+CREATE TABLE `roles`  (
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `note` VARCHAR(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `created` DATETIME NULL DEFAULT NULL,
+  `updated` DATETIME NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = INNODB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = COMPACT;
+
+INSERT INTO `roles` VALUES (1, '张三', '系统管理员', '2019-03-31 23:45:36', NULL);
+INSERT INTO `roles` VALUES (2, '李四', '普通用户', '2019-03-31 23:45:39', NULL);
+```
 pom
 ```
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -415,9 +432,10 @@ public class RoleController {
 }
 
 ```
-页面访问地址
+#### 页面访问地址
 http://localhost:8080/schoolmanage/role/list.do
-数据访问地址
+
+#### 数据访问地址
 http://localhost:8080/schoolmanage/role/listPages.do
 
 
